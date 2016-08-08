@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions" xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:p="http://xmlns.jcp.org/jsf/passthrough" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Tests</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+</h:head>
+<h:body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" />
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+	<div class="container">
+		<h:form id="form" styleClass="form-horizontal">
+			<button jsf:action="#{testBean.update()}" class="btn btn-default">Update</button>
+			<div class="form-group">
+				<h:outputLabel value="Cars" for="carsInput" />
+				<h:inputText id="carsInput" value="#{testBean.value}" styleClass="form-control" p:placeholder="Cars" p:list="cars" p:autocomplete="off" required="true" requiredMessage="Required" />
+				<h:message for="carsInput" />
+				<datalist id="cars">
+					<option value="Audi" />
+					<option value="Fiat" />
+					<option value="Ford" />
+					<option value="VW" />
+				</datalist>
+			</div>
+		</h:form>
+	</div>
+	<footer>
+		<h:link outcome="home">Go Home</h:link>
+	</footer>
+</h:body>
+</html>
